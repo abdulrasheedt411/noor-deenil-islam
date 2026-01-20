@@ -1,1 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Dialogue and debate platform for engaging Christianity and other faiths with wisdom">
+    <meta name="author" content="Noor Deenil Islam">
+    <title>Dialogue & Debate - Noor Deenil Islam</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --islamic-green: #2c786c;
+            --islamic-gold: #d4af37;
+            --islamic-white: #f8f9fa;
+            --dark-green: #245c53;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        /* Arabic Font for Islamic Texts */
+        .arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 24px;
+            color: white !important;
+        }
+        
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 8px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Content Cards */
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-top: 5px solid var(--islamic-green);
+            transition: transform 0.3s ease;
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .section-title {
+            color: var(--islamic-green);
+            border-bottom: 3px solid var(--islamic-gold);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-weight: 700;
+        }
+        
+        /* Topic Cards */
+        .topic-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            padding: 25px;
+            height: 100%;
+            border-left: 4px solid var(--islamic-green);
+            transition: all 0.3s ease;
+        }
+        
+        .topic-card:hover {
+            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .topic-icon {
+            font-size: 2.5rem;
+            color: var(--islamic-green);
+            margin-bottom: 20px;
+        }
+        
+        /* Rules Section */
+        .rules-section {
+            background: linear-gradient(135deg, #e8f4f1 0%, #d4e8e1 100%);
+            border-radius: 15px;
+            padding: 40px;
+            border: 2px solid var(--islamic-green);
+        }
+        
+        .rule-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+        
+        .rule-number {
+            background: var(--islamic-green);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+        
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border: none;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 15px rgba(44, 120, 108, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 120, 108, 0.4);
+            color: white;
+        }
+        
+        /* Quran Verse */
+        .quran-verse {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px 0;
+            text-align: center;
+            font-style: italic;
+            box-shadow: 0 10px 30px rgba(44, 120, 108, 0.2);
+        }
+        
+        .quran-arabic {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .quran-translation {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer p {
+            opacity: 0.9;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .content-card {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mosque me-2"></i>Noor Deenil Islam
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="dialogue.html">
+                            <i class="fas fa-comments me-1"></i>Dialogue & Debate
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle me-1"></i>About Islam
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope me-1"></i>Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Dialogue & Debate</h1>
+            <p class="hero-subtitle">
+                Engaging Christianity and Other Faiths with Wisdom, Evidence, and the Highest Standards of Respect
+            </p>
+            <a href="#start-dialogue" class="cta-button">
+                <i class="fas fa-handshake me-2"></i>Start Respectful Dialogue
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container my-5">
+        <!-- Mission Section -->
+        <div class="content-card">
+            <h2 class="section-title">
+                <i class="fas fa-bullseye me-2"></i>Our Mission in Interfaith Dialogue
+            </h2>
+            <p>
+                At Noor Deenil Islam, we believe in following the Quranic injunction: 
+                <strong>"Invite to the way of your Lord with wisdom and beautiful preaching, and argue with them in a way that is best."</strong> (Quran 16:125)
+            </p>
+            <p>
+                Our dialogue platform is built on three foundational pillars that guide every discussion:
+            </p>
+            
+            <div class="row mt-4">
+                <div class="col-md-4 mb-4">
+                    <div class="topic-card text-center">
+                        <div class="topic-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Knowledge-Based</h4>
+                        <p>Using evidence from the Quran, authentic Hadith, Biblical scriptures, historical facts, and logical reasoning.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="topic-card text-center">
+                        <div class="topic-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h4>Respectful Character</h4>
+                        <p>Maintaining the prophetic example of beautiful character, patience, and avoiding personal attacks.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="topic-card text-center">
+                        <div class="topic-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h4>Truth-Seeking</h4>
+                        <p>Focusing on discovering truth rather than winning arguments, with sincerity in intentions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Topics Section -->
+        <div class="content-card">
+            <h2 class="section-title">
+                <i class="fas fa-book-open me-2"></i>Key Discussion Topics
+            </h2>
+            <p>We focus on core theological and philosophical topics that form the basis of Islamic-Christian dialogue:</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6 mb-4">
+                    <div class="topic-card">
+                        <h4><i class="fas fa-star-of-david me-2"></i>The Nature of God</h4>
+                        <p><strong>Islamic Tawheed:</strong> Absolute Oneness of Allah, no partners, no sons, no equals.</p>
+                        <p><strong>Christian Trinity:</strong> Father, Son, Holy Spirit as three persons in one God.</p>
+                        <p class="mt-2"><em>Discussion: Biblical vs Quranic concept of God, logical coherence, historical development.</em></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="topic-card">
+                        <h4><i class="fas fa-cross me-2"></i>Jesus in Islam & Christianity</h4>
+                        <p><strong>Islam:</strong> Prophet Isa (Jesus), born miraculously to Virgin Mary, not divine, not crucified.</p>
+                        <p><strong>Christianity:</strong> Divine Son of God, crucified for salvation, resurrected.</p>
+                        <p class="mt-2"><em>Discussion: Historical Jesus, crucifixion accounts, second coming prophecies.</em></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="topic-card">
+                        <h4><i class="fas fa-book me-2"></i>Scripture Authenticity</h4>
+                        <p><strong>Quran:</strong> Preserved letter-by-letter, unchanged since revelation.</p>
+                        <p><strong>Bible:</strong> Multiple versions, textual variants, historical compilation.</p>
+                        <p class="mt-2"><em>Discussion: Preservation methods, manuscript evidence, contradictions.</em></p>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="topic-card">
+                        <h4><i class="fas fa-question-circle me-2"></i>Salvation & Afterlife</h4>
+                        <p><strong>Islam:</strong> Salvation through faith + good deeds, accountability before Allah.</p>
+                        <p><strong>Christianity:</strong> Salvation through faith in Jesus' sacrifice.</p>
+                        <p class="mt-2"><em>Discussion: Concept of sin, forgiveness, heaven/hell, divine justice.</em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quran Verse -->
+        <div class="quran-verse">
+            <div class="quran-arabic arabic">
+                وَجَـٰدِلْهُم بِٱلَّتِى هِىَ أَحْسَنُ
+            </div>
+            <div class="quran-translation">
+                "And argue with them in a way that is best." - Quran 16:125
+            </div>
+        </div>
+
+        <!-- Rules Section -->
+        <div class="content-card">
+            <h2 class="section-title">
+                <i class="fas fa-scale-balanced me-2"></i>Rules of Engagement
+            </h2>
+            <div class="rules-section">
+                <div class="rule-item">
+                    <div class="rule-number">1</div>
+                    <div>
+                        <h5>Respect is Mandatory</h5>
+                        <p>All participants must be treated with dignity regardless of their beliefs. No insults, mockery, or demeaning language.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">2</div>
+                    <div>
+                        <h5>Evidence-Based Discussion</h5>
+                        <p>Support claims with sources: Quranic verses, authentic Hadith, Biblical references, historical facts, or logical reasoning.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">3</div>
+                    <div>
+                        <h5>Good Character (Akhlaq)</h5>
+                        <p>Follow the prophetic example: patience, wisdom, beautiful speech, and controlling anger.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">4</div>
+                    <div>
+                        <h5>Clarity Over Victory</h5>
+                        <p>Aim for understanding and truth-discovery, not just winning arguments or scoring points.</p>
+                    </div>
+                </div>
+                <div class="rule-item">
+                    <div class="rule-number">5</div>
+                    <div>
+                        <h5>Sincerity in Intentions</h5>
+                        <p>Approach discussions with sincere desire to understand, clarify, and seek truth—not to embarrass others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="content-card text-center" id="start-dialogue">
+            <h2 class="section-title">
+                <i class="fas fa-handshake me-2"></i>Ready for Respectful Dialogue?
+            </h2>
+            <p class="mb-4">
+                Have questions about Islam? Want to discuss theological points? Interested in comparative religion study?
+                We welcome sincere inquiries from Christians and followers of all faiths.
+            </p>
+            <a href="contact.html" class="cta-button me-3">
+                <i class="fas fa-envelope me-2"></i>Contact Us
+            </a>
+            <a href="index.html" class="cta-button" style="background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                <i class="fas fa-home me-2"></i>Return Home
+            </a>
+            <p class="mt-4 text-muted">
+                <i class="fas fa-info-circle me-1"></i>
+                Response time: Usually within 24 hours. All discussions are private and respectful.
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <h4 class="mb-3">
+                <i class="fas fa-mosque me-2"></i>Noor Deenil Islam
+            </h4>
+            <p class="mb-3">Faith, Reason & Dialogue | Spreading the Light of Tawheed</p>
+            <p class="mb-4">
+                "Who is better in speech than one who invites to Allah, does righteous deeds, and says: 'I am of the Muslims.'" - Quran 41:33
+            </p>
+            <hr style="opacity: 0.3; margin: 30px auto; width: 50%;">
+            <p class="mb-0">&copy; 2024 Noor Deenil Islam. All rights reserved.</p>
+            <p class="mt-2" style="font-size: 0.9rem; opacity: 0.8;">
+                A platform for Islamic Dawah and interfaith dialogue
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to current page in nav
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if(linkPage === currentPage || 
+                   (currentPage === '' && linkPage === 'index.html')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
