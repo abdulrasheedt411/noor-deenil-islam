@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Islamic resources, books, videos, and apps for learning Islam and Dawah">
+    <meta name="keywords" content="Islamic books, Quran apps, Dawah videos, Muslim resources, Islamic education">
+    <meta name="author" content="Noor Deenil Islam">
+    
+    <title>Islamic Resources - Noor Deenil Islam</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-green: #2c786c;
+            --dark-green: #245c53;
+            --light-green: #e8f4f1;
+            --gold: #d4af37;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--white) !important;
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 500;
+            margin: 0 8px;
+            padding: 8px 16px !important;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--white);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Cards */
+        .resource-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            border-top: 5px solid var(--primary-green);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .resource-icon {
+            font-size: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 20px;
+        }
+        
+        .resource-header {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .resource-body {
+            padding: 30px;
+        }
+        
+        .btn-resource {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-resource:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(44, 120, 108, 0.3);
+            color: var(--white);
+        }
+        
+        /* Category Badges */
+        .category-badge {
+            display: inline-block;
+            background: var(--light-green);
+            color: var(--dark-green);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            color: var(--primary-green);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--gold);
+            display: inline-block;
+        }
+        
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 50px 0 20px;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mosque"></i> Noor Deenil Islam
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dialogue.html">
+                            <i class="fas fa-comments"></i> Dialogue
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle"></i> About Islam
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="resources.html">
+                            <i class="fas fa-book"></i> Resources
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">Islamic Resources Library</h1>
+            <p class="hero-subtitle">
+                Books, videos, apps, and tools for learning Islam and effective Dawah. 
+                Curated by Abdul Rasheed Nkhoma (Hafiz al-Quran & Science Student).
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container py-5">
+        <!-- Introduction -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <div class="alert alert-info" style="background: var(--light-green); border-color: var(--primary-green);">
+                    <h5 class="alert-heading">
+                        <i class="fas fa-info-circle me-2"></i>About This Library
+                    </h5>
+                    <p class="mb-0">
+                        This is a curated collection of Islamic resources that I have found valuable in my journey 
+                        as a Hafiz and Dawah worker. I regularly update this page with new books, videos, and tools 
+                        that can help Muslims strengthen their faith and non-Muslims understand Islam better.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Books Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title">
+                    <i class="fas fa-book me-2"></i>Recommended Books
+                </h2>
+                <p class="mb-4">Essential reading for understanding Islam and Dawah methodology.</p>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-quran"></i>
+                        </div>
+                        <h4>The Quran</h4>
+                    </div>
+                    <div class="resource-body">
+                        <h5>The Holy Quran</h5>
+                        <p class="text-muted">With English Translation & Tafsir</p>
+                        <p>The word of Allah - primary source of Islamic guidance. Recommended translations: Saheeh International, Yusuf Ali, Pickthall.</p>
+                        <div class="mb-3">
+                            <span class="category-badge">Primary Source</span>
+                            <span class="category-badge">Tawheed</span>
+                        </div>
+                        <a href="https://quran.com" target="_blank" class="btn-resource">
+                            <i class="fas fa-external-link-alt me-2"></i>Read Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h4>Dawah Books</h4>
+                    </div>
+                    <div class="resource-body">
+                        <h5>Christian-Muslim Dialogue</h5>
+                        <p class="text-muted">Comparative Religion</p>
+                        <p>Essential books for engaging Christians: "The Choice" by Ahmed Deedat, "The Bible and the Quran" by William Campbell.</p>
+                        <div class="mb-3">
+                            <span class="category-badge">Dialogue</span>
+                            <span class="category-badge">Comparative</span>
+                        </div>
+                        <a href="#" class="btn-resource">
+                            <i class="fas fa-download me-2"></i>Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="resource-card">
+                    <div class="resource-header">
+                        <div class="resource-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Aqeedah</h4>
+                    </div>
+                    <div class="resource-body">
+                        <h5>Islamic Creed</h5>
+                        <p class="text-muted">Tawheed Studies</p>
+                        <p>Books on Islamic belief: "The Fundamentals of Tawheed" by Bilal Philips, "Explanation of Three Fundamental Principles" by Ibn Uthaymeen.</p>
+                        <div class="mb-3">
+                            <span class="category-badge">Aqeedah</span>
+                            <span class="category-badge">Tawheed</span>
+                        </div>
+                        <a href="#" class="btn-resource">
+                            <i class="fas fa-download me-2"></i>Download PDF
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Videos Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title">
+                    <i class="fas fa-video me-2"></i>Dawah Videos & Lectures
+                </h2>
+                <p class="mb-4">Video resources for learning and sharing Islamic knowledge.</p>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="resource-card">
+                    <div class="resource-body text-center">
+                        <div class="resource-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h4>YouTube Channels</h4>
+                        <p>Recommended channels for Islamic knowledge and Dawah:</p>
+                        <ul class="text-start" style="list-style: none; padding-left: 0;">
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>One Islam Productions</strong> - Professional Dawah content
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>Mufti Menk</strong> - Motivational Islamic lectures
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>Digital Mimbar</strong> - Short educational videos
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-check-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>Yaqeen Institute</strong> - Academic Islamic content
+                            </li>
+                        </ul>
+                        <a href="https://youtube.com" target="_blank" class="btn-resource mt-3">
+                            <i class="fab fa-youtube me-2"></i>Visit YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-6 mb-4">
+                <div class="resource-card">
+                    <div class="resource-body text-center">
+                        <div class="resource-icon">
+                            <i class="fas fa-film"></i>
+                        </div>
+                        <h4>Documentaries</h4>
+                        <p>Islamic documentaries for understanding Islam's history and message:</p>
+                        <ul class="text-start" style="list-style: none; padding-left: 0;">
+                            <li class="mb-2">
+                                <i class="fas fa-play-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>The Message (1976)</strong> - Life of Prophet Muhammad
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-play-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>Islam: Empire of Faith</strong> - PBS documentary
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-play-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>The Life of Muhammad</strong> - BBC documentary
+                            </li>
+                            <li class="mb-2">
+                                <i class="fas fa-play-circle me-2" style="color: var(--primary-green);"></i>
+                                <strong>Inside the Quran</strong> - National Geographic
+                            </li>
+                        </ul>
+                        <a href="#" class="btn-resource mt-3">
+                            <i class="fas fa-external-link-alt me-2"></i>Watch Online
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Apps Section -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title">
+                    <i class="fas fa-mobile-alt me-2"></i>Islamic Apps
+                </h2>
+                <p class="mb-4">Mobile applications for daily Islamic practice and learning.</p>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="resource-card text-center h-100">
+                    <div class="resource-body">
+                        <div class="resource-icon">
+                            <i class="fas fa-quran"></i>
+                        </div>
+                        <h5>Quran Apps</h5>
+                        <p class="small">"Quran.com", "Muslim Pro", "iQuran" - For reading, listening, and studying Quran with translations.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="resource-card text-center h-100">
+                    <div class="resource-body">
+                        <div class="resource-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h5>Prayer Times</h5>
+                        <p class="small">"Prayer Times", "Athan", "Muslim Pro" - Accurate prayer times, Qibla direction, Islamic calendar.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="resource-card text-center h-100">
+                    <div class="resource-body">
+                        <div class="resource-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h5>Learning Apps</h5>
+                        <p class="small">"Bayyinah TV", "Learn Islam", "Arabic Quick" - For learning Arabic, Quran, and Islamic studies.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="resource-card text-center h-100">
+                    <div class="resource-body">
+                        <div class="resource-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h5>Dawah Apps</h5>
+                        <p class="small">"Towards Islam", "Dawah Training", "Islam FAQ" - Resources for sharing Islam with others.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Coming Soon -->
+        <div class="row">
+            <div class="col-12">
+                <div class="alert alert-warning">
+                    <h5 class="alert-heading">
+                        <i class="fas fa-bullhorn me-2"></i>Coming Soon!
+                    </h5>
+                    <p class="mb-2">I'm working on adding:</p>
+                    <ul class="mb-0">
+                        <li><strong>My own video lectures</strong> on Tawheed and Christian-Muslim dialogue</li>
+                        <li><strong>PDF library</strong> of Islamic books for download</li>
+                        <li><strong>Recommended reading lists</strong> for different topics</li>
+                        <li><strong>Interactive learning tools</strong> for new Muslims</li>
+                    </ul>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <h4>Have Resource Suggestions?</h4>
+                    <p>Know a great Islamic book, video, or app? Want me to review something?</p>
+                    <a href="contact.html" class="btn-resource btn-lg">
+                        <i class="fas fa-envelope me-2"></i>Contact Me with Suggestions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                    <h4 class="mb-3">
+                        <i class="fas fa-mosque me-2"></i> Noor Deenil Islam
+                    </h4>
+                    <p>Faith, Reason & Dialogue</p>
+                    <p>Curated by Abdul Rasheed Nkhoma<br>Hafiz al-Quran & Science Student</p>
+                </div>
+                
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div>
+                        <a href="index.html" class="text-white d-block mb-2">Home</a>
+                        <a href="dialogue.html" class="text-white d-block mb-2">Dialogue & Debate</a>
+                        <a href="resources.html" class="text-white d-block mb-2">Resources</a>
+                        <a href="contact.html" class="text-white d-block mb-2">Contact</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 text-center text-lg-end">
+                    <h5 class="mb-3">Share Knowledge</h5>
+                    <p>This resources page is regularly updated with valuable Islamic content.</p>
+                    <p class="mt-4">
+                        <i class="fas fa-quote-left me-2" style="opacity: 0.7;"></i>
+                        "The seeking of knowledge is obligatory for every Muslim."
+                        <i class="fas fa-quote-right ms-2" style="opacity: 0.7;"></i>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2024 Noor Deenil Islam. All rights reserved.</p>
+                <p class="small" style="opacity: 0.8;">A Dawah initiative by Abdul Rasheed Nkhoma</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === 'resources.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
