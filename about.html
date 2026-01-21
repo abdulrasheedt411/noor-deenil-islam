@@ -161,6 +161,37 @@
             background: var(--light-green);
         }
         
+        /* Biblical Evidence Section */
+        .biblical-section {
+            background: linear-gradient(135deg, #2d3e50 0%, #1a2530 100%);
+            color: white;
+            padding: 80px 0;
+            border-radius: 25px;
+            margin: 60px 0;
+        }
+        
+        .biblical-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            border-left: 5px solid var(--gold);
+            backdrop-filter: blur(10px);
+        }
+        
+        .bible-icon {
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+        
+        .verse-reference {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            font-style: italic;
+            margin-top: 15px;
+        }
+        
         /* Pillars Section */
         .pillar-card {
             background: linear-gradient(135deg, var(--light-green) 0%, #d4e8e1 100%);
@@ -325,6 +356,10 @@
             .belief-card, .pillar-card {
                 padding: 30px;
             }
+            
+            .biblical-section {
+                padding: 50px 0;
+            }
         }
         
         /* Mobile Menu */
@@ -455,6 +490,127 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BIBLICAL EVIDENCE SECTION ===== -->
+    <section class="biblical-section">
+        <div class="container">
+            <h2 class="text-center mb-5" style="font-size: 2.8rem; font-weight: 800;">
+                <i class="fas fa-bible me-3"></i>Biblical Support for Islamic Beliefs
+            </h2>
+            <p class="text-center mb-5" style="font-size: 1.2rem; max-width: 900px; margin: 0 auto 50px; opacity: 0.9;">
+                The Quran confirms the previous scriptures. Here are Biblical verses that align with Islamic beliefs:
+            </p>
+            
+            <div class="row">
+                <!-- Oneness of God -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-star-of-david"></i>
+                        </div>
+                        <h4>Oneness of God (Tawheed)</h4>
+                        <p>"Hear, O Israel: The Lord our God, the Lord is one."</p>
+                        <p class="verse-reference">Deuteronomy 6:4 (Shema)</p>
+                        
+                        <p class="mt-3">"You shall have no other gods before me."</p>
+                        <p class="verse-reference">Exodus 20:3 (First Commandment)</p>
+                        
+                        <p class="mt-3">"I am the Lord, and there is no other; apart from me there is no God."</p>
+                        <p class="verse-reference">Isaiah 45:5</p>
+                    </div>
+                </div>
+                
+                <!-- Jesus' Teachings -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-cross"></i>
+                        </div>
+                        <h4>Jesus' Teachings on Salvation</h4>
+                        <p>"Not everyone who says to me, 'Lord, Lord,' will enter the kingdom of heaven, but only the one who does the will of my Father who is in heaven."</p>
+                        <p class="verse-reference">Matthew 7:21</p>
+                        
+                        <p class="mt-3">"For whoever does the will of my Father in heaven is my brother and sister and mother."</p>
+                        <p class="verse-reference">Matthew 12:50</p>
+                        
+                        <p class="mt-3">"Why do you call me good? No one is good—except God alone."</p>
+                        <p class="verse-reference">Mark 10:18</p>
+                    </div>
+                </div>
+                
+                <!-- Prophethood -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h4>Prophethood & Submission</h4>
+                        <p>"This is what the Lord Almighty says: 'Return to me,' declares the Lord Almighty, 'and I will return to you,' says the Lord Almighty."</p>
+                        <p class="verse-reference">Zechariah 1:3</p>
+                        
+                        <p class="mt-3">"Submit yourselves, then, to God. Resist the devil, and he will flee from you."</p>
+                        <p class="verse-reference">James 4:7</p>
+                        
+                        <p class="mt-3">"Has the Lord as great delight in burnt offerings and sacrifices, as in obeying the voice of the Lord? Behold, to obey is better than sacrifice."</p>
+                        <p class="verse-reference">1 Samuel 15:22</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Column -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <h4>Prayer & Worship</h4>
+                        <p>"And when you pray, do not keep on babbling like pagans, for they think they will be heard because of their many words."</p>
+                        <p class="verse-reference">Matthew 6:7</p>
+                        
+                        <p class="mt-3">"Worship the Lord your God, and serve him only."</p>
+                        <p class="verse-reference">Matthew 4:10</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Column -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-scale-balanced"></i>
+                        </div>
+                        <h4>Justice & Morality</h4>
+                        <p>"He has shown you, O mortal, what is good. And what does the Lord require of you? To act justly and to love mercy and to walk humbly with your God."</p>
+                        <p class="verse-reference">Micah 6:8</p>
+                        
+                        <p class="mt-3">"Do not think that I have come to abolish the Law or the Prophets; I have not come to abolish them but to fulfill them."</p>
+                        <p class="verse-reference">Matthew 5:17</p>
+                    </div>
+                </div>
+                
+                <!-- Additional Column -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="biblical-card">
+                        <div class="bible-icon">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h4>Charity & Brotherhood</h4>
+                        <p>"If anyone has material possessions and sees a brother or sister in need but has no pity on them, how can the love of God be in that person?"</p>
+                        <p class="verse-reference">1 John 3:17</p>
+                        
+                        <p class="mt-3">"Give to the one who asks you, and do not turn away from the one who wants to borrow from you."</p>
+                        <p class="verse-reference">Matthew 5:42</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <p style="font-size: 1.1rem; opacity: 0.9; max-width: 800px; margin: 0 auto;">
+                    <i class="fas fa-info-circle me-2"></i>
+                    These Biblical verses show that the core message of Islam - Tawheed (Oneness of God), submission to God's will, 
+                    good character, and righteous deeds - is consistent with the teachings of previous prophets including Jesus (peace be upon him).
+                </p>
             </div>
         </div>
     </section>
