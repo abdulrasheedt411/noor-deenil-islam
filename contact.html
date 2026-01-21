@@ -1,158 +1,679 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Clean Blog - Start Bootstrap Theme</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
-                    </ul>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Noor Deenil Islam for questions about Islam, dialogue with Christians, or interfaith discussions">
+    <meta name="keywords" content="contact Islam, Muslim dialogue, ask questions about Islam, interfaith discussion">
+    <meta name="author" content="Noor Deenil Islam">
+    
+    <title>Contact Us - Noor Deenil Islam</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --islamic-green: #2c786c;
+            --dark-green: #245c53;
+            --light-green: #e8f4f1;
+            --gold: #d4af37;
+            --white: #ffffff;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        /* Navigation */
+        .navbar-custom {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255,255,255,0.15);
+            border-radius: 5px;
+        }
+        
+        /* Hero Section */
+        .hero-contact {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.4rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* Contact Cards */
+        .contact-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-top: 6px solid var(--islamic-green);
+            text-align: center;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+        }
+        
+        .contact-icon {
+            font-size: 3.5rem;
+            color: var(--islamic-green);
+            margin-bottom: 25px;
+            display: inline-block;
+            padding: 25px;
+            border-radius: 50%;
+            background: var(--light-green);
+        }
+        
+        /* Form Styles */
+        .contact-form {
+            background: white;
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 2px solid var(--light-green);
+        }
+        
+        .form-control {
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #e9ecef;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--islamic-green);
+            box-shadow: 0 0 0 3px rgba(44, 120, 108, 0.2);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: var(--dark-green);
+            margin-bottom: 10px;
+        }
+        
+        /* Button */
+        .submit-btn {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            transition: all 0.4s ease;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(44, 120, 108, 0.4);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(44, 120, 108, 0.5);
+        }
+        
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: white;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+        }
+        
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+            color: white;
+        }
+        
+        /* FAQ Section */
+        .faq-contact {
+            background: linear-gradient(135deg, var(--light-green) 0%, #d4e8e1 100%);
+            border-radius: 25px;
+            padding: 50px;
+            margin: 60px 0;
+        }
+        
+        .faq-item-contact {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--islamic-green);
+        }
+        
+        /* Response Time */
+        .response-time {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        /* Footer */
+        .footer-custom {
+            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+            color: white;
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .contact-form {
+                padding: 30px;
+            }
+            
+            .contact-card {
+                padding: 30px;
+            }
+        }
+        
+        /* Mobile Menu */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
+                padding: 20px;
+                border-radius: 15px;
+                margin-top: 15px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            }
+            
+            .nav-link {
+                padding: 15px !important;
+                margin: 8px 0;
+                text-align: center;
+                background-color: rgba(255,255,255,0.1);
+                border-radius: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html">
+                <i class="fas fa-mosque"></i> Noor Deenil Islam
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="./index.html">
+                            <i class="fas fa-home"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./dialogue.html">
+                            <i class="fas fa-comments"></i> Dialogue
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">
+                            <i class="fas fa-info-circle"></i> About Islam
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./resources.html">
+                            <i class="fas fa-book"></i> Resources
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./contact.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-contact">
+        <div class="container">
+            <h1 class="hero-title">Contact Us</h1>
+            <p class="hero-subtitle">
+                Have questions about Islam? Want to engage in respectful dialogue? 
+                We're here to help with evidence-based answers and meaningful discussions.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="mb-4" style="color: var(--islamic-green); font-size: 2.5rem; font-weight: 800;">
+                        Ways to Get in Touch
+                    </h2>
+                    <p class="mb-5" style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                        Choose the method that works best for you. All inquiries are treated with respect and confidentiality.
+                    </p>
                 </div>
             </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/contact-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="page-heading">
-                            <h1>Contact Me</h1>
-                            <span class="subheading">Have questions? I have answers.</span>
+            
+            <div class="row">
+                <!-- WhatsApp -->
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <h3>WhatsApp Message</h3>
+                        <p class="text-muted mb-4">Fast response for quick questions</p>
+                        <p>Ideal for brief questions about Islam, quick clarifications, or scheduling a discussion.</p>
+                        <div class="mt-4">
+                            <!-- REPLACE THIS NUMBER WITH YOUR ACTUAL WHATSAPP NUMBER -->
+                            <a href="https://wa.me/260123456789?text=Assalamu%20Alaikum%20Brother%20Abdul%20Rasheed%2C%20I%20have%20a%20question%20about%20Islam" 
+                               target="_blank" class="whatsapp-btn">
+                                <i class="fab fa-whatsapp me-2"></i> Message on WhatsApp
+                            </a>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            <i class="fas fa-clock me-1"></i> Response time: Usually within 24 hours
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Email -->
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3>Email Us</h3>
+                        <p class="text-muted mb-4">For detailed questions and discussions</p>
+                        <p>Best for in-depth questions, theological discussions, or when you need to attach documents/files.</p>
+                        <div class="mt-4">
+                            <a href="mailto:contact@noordeenilislam.com" class="submit-btn" style="display: inline-block; width: auto;">
+                                <i class="fas fa-paper-plane me-2"></i> Send Email
+                            </a>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            <!-- REPLACE WITH YOUR ACTUAL EMAIL -->
+                            <i class="fas fa-at me-1"></i> Email: abdulrasheed@example.com
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Form -->
+                <div class="col-md-4 mb-4">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-comment-dots"></i>
+                        </div>
+                        <h3>Contact Form</h3>
+                        <p class="text-muted mb-4">Structured questions and requests</p>
+                        <p>Use this form for specific topics, dialogue requests, or resource suggestions. All fields are optional.</p>
+                        <div class="mt-4">
+                            <a href="#contact-form" class="submit-btn" style="display: inline-block; width: auto; background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                                <i class="fas fa-arrow-down me-2"></i> Go to Form Below
+                            </a>
+                        </div>
+                        <p class="mt-3 small text-muted">
+                            <i class="fas fa-shield-alt me-1"></i> Your information is kept private
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Your Contact -->
+    <section class="faq-contact">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 style="color: var(--dark-green); margin-bottom: 25px;">
+                        <i class="fas fa-user-graduate me-2"></i> Who Will Respond to You?
+                    </h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 20px;">
+                        Your questions will be answered personally by <strong>Abdul Rasheed Nkhoma</strong>, 
+                        founder of Noor Deenil Islam.
+                    </p>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="faq-item-contact">
+                                <h5><i class="fas fa-book-quran me-2" style="color: var(--islamic-green);"></i> Qualifications</h5>
+                                <p class="mb-0">• Hafiz al-Quran (Memorized entire Quran)<br>
+                                   • 6+ years Christian-Muslim dialogue experience<br>
+                                   • Science Education student</p>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="faq-item-contact">
+                                <h5><i class="fas fa-handshake me-2" style="color: var(--islamic-green);"></i> Approach</h5>
+                                <p class="mb-0">• Evidence-based responses<br>
+                                   • Respectful and patient dialogue<br>
+                                   • Quranic and Biblical references<br>
+                                   • Logical reasoning</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </header>
-        <!-- Main Content-->
-        <main class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>Want to get in touch? Fill out the form below to send me a message and I will get back to you as soon as possible!</p>
-                        <div class="my-5">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <div class="form-floating">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="email" type="email" placeholder="Enter your email..." data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Enter your phone number..." data-sb-validations="required" />
-                                    <label for="phone">Phone Number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
-                                </div>
-                                <div class="form-floating">
-                                    <textarea class="form-control" id="message" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
-                                </div>
-                                <br />
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                                <!-- Submit Button-->
-                                <button class="btn btn-primary text-uppercase disabled" id="submitButton" type="submit">Send</button>
-                            </form>
+                
+                <div class="col-lg-4 text-center">
+                    <div style="background: white; padding: 30px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%); 
+                                 color: white; display: flex; align-items: center; justify-content: center; font-size: 4rem; margin: 0 auto 20px;">
+                            <i class="fas fa-user-graduate"></i>
                         </div>
+                        <h4 style="color: var(--islamic-green);">Abdul Rasheed Nkhoma</h4>
+                        <p class="text-muted">Founder & Dialogue Coordinator</p>
                     </div>
                 </div>
             </div>
-        </main>
-        <!-- Footer-->
-        <footer class="border-top">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <ul class="list-inline text-center">
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a href="#!">
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fas fa-circle fa-stack-2x"></i>
-                                        <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                                    </span>
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2023</div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="py-5" id="contact-form">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-form">
+                        <h2 class="text-center mb-4" style="color: var(--islamic-green); font-weight: 800;">
+                            <i class="fas fa-paper-plane me-2"></i> Send Your Question
+                        </h2>
+                        <p class="text-center mb-5" style="font-size: 1.1rem;">
+                            Fill out this form and I'll respond personally. All questions are welcome.
+                        </p>
+                        
+                        <!-- Note: This form doesn't actually send emails yet -->
+                        <!-- For real functionality, you'd need backend code or Formspree -->
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label">Your Name (Optional)</label>
+                                    <input type="text" class="form-control" placeholder="Enter your name">
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <label class="form-label">Email Address (Optional)</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email">
+                                </div>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Your Background (Optional)</label>
+                                <select class="form-control">
+                                    <option value="">Select your background</option>
+                                    <option value="muslim">Muslim</option>
+                                    <option value="christian">Christian</option>
+                                    <option value="other-religion">Other Religion</option>
+                                    <option value="seeker">Seeker/Interested in Islam</option>
+                                    <option value="atheist">Atheist/Agnostic</option>
+                                    <option value="prefer-not-to-say">Prefer not to say</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Question Type</label>
+                                <select class="form-control" required>
+                                    <option value="">Select question type</option>
+                                    <option value="tawheed">About Tawheed (Oneness of God)</option>
+                                    <option value="jesus">About Jesus in Islam</option>
+                                    <option value="quran">About Quran & Bible</option>
+                                    <option value="dialogue">Request for Dialogue/Debate</option>
+                                    <option value="general">General Question About Islam</option>
+                                    <option value="resource">Resource Suggestion/Request</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <label class="form-label">Your Question/Message *</label>
+                                <textarea class="form-control" rows="6" placeholder="Please type your question or message here..." required></textarea>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="respectCheck" required>
+                                    <label class="form-check-label" for="respectCheck">
+                                        I agree to engage in respectful dialogue and avoid insults or offensive language
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane me-2"></i> Send Message
+                            </button>
+                            
+                            <p class="text-center mt-4 text-muted small">
+                                <i class="fas fa-info-circle me-1"></i>
+                                Note: This is a demonstration form. For actual contact, please use WhatsApp or Email above.
+                            </p>
+                        </form>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        </div>
+    </section>
+
+    <!-- Response Time Info -->
+    <section class="container">
+        <div class="response-time">
+            <div class="row align-items-center">
+                <div class="col-md-8">
+                    <h3><i class="fas fa-clock me-2"></i> Response Time & Availability</h3>
+                    <p class="mb-0">
+                        As a student, I check messages regularly but responses may take 24-48 hours. 
+                        Complex theological questions may require more time for thorough, evidence-based responses.
+                    </p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <div style="font-size: 3rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" style="color: var(--islamic-green); font-size: 2.2rem; font-weight: 800;">
+                <i class="fas fa-question-circle me-2"></i> Frequently Asked Questions
+            </h2>
+            
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item-contact">
+                        <h5><i class="fas fa-comments me-2" style="color: var(--islamic-green);"></i> What kind of questions can I ask?</h5>
+                        <p class="mb-0">Any question about Islam is welcome: beliefs, practices, history, comparison with Christianity, science in Islam, moral issues, etc.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item-contact">
+                        <h5><i class="fas fa-shield-alt me-2" style="color: var(--islamic-green);"></i> Is my question private?</h5>
+                        <p class="mb-0">Yes, all conversations are private unless you give permission to share (anonymously) for educational purposes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item-contact">
+                        <h5><i class="fas fa-book me-2" style="color: var(--islamic-green);"></i> Will you provide evidence for answers?</h5>
+                        <p class="mb-0">Yes, I provide Quranic verses, authentic Hadith, Biblical references (when applicable), and logical reasoning.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="faq-item-contact">
+                        <h5><i class="fas fa-users me-2" style="color: var(--islamic-green);"></i> Can we have a live discussion?</h5>
+                        <p class="mb-0">Yes, after initial contact we can arrange voice/video calls for in-depth dialogue, depending on availability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5" style="background: #f8f9fa;">
+        <div class="container text-center">
+            <h2 style="color: var(--islamic-green); font-size: 2.5rem; font-weight: 800; margin-bottom: 30px;">
+                Ready to Start the Conversation?
+            </h2>
+            <p class="mb-5" style="font-size: 1.2rem; max-width: 700px; margin: 0 auto;">
+                "And when the ignorant address them, they say words of peace." - Quran 25:63
+            </p>
+            
+            <div class="d-flex justify-content-center gap-4 flex-wrap">
+                <a href="#contact-form" class="submit-btn" style="width: auto;">
+                    <i class="fas fa-paper-plane me-2"></i> Use Contact Form
+                </a>
+                <a href="./dialogue.html" class="submit-btn" style="width: auto; background: linear-gradient(135deg, #6c757d 0%, #495057 100%);">
+                    <i class="fas fa-comments me-2"></i> Browse Dialogue Topics
+                </a>
+                <a href="./index.html" class="submit-btn" style="width: auto; background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);">
+                    <i class="fas fa-home me-2"></i> Return to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
+                    <h4 class="mb-3">
+                        <i class="fas fa-mosque me-2"></i> Noor Deenil Islam
+                    </h4>
+                    <p>Faith, Reason & Dialogue</p>
+                    <p>Managed by Abdul Rasheed Nkhoma<br>
+                       Hafiz al-Quran | Science Student<br>
+                       6+ Years Dialogue Experience</p>
+                </div>
+                
+                <div class="col-lg-4 text-center mb-4 mb-lg-0">
+                    <h5 class="mb-3">Contact Methods</h5>
+                    <div>
+                        <a href="#whatsapp" class="text-white d-block mb-2">+260776364223</a>
+                        <a href="#email" class="text-white d-block mb-2">abdulrasheedt411@gmail.com</a>
+                        <a href="#contact-form" class="text-white d-block mb-2">Contact Form</a>
+                        <a href="./dialogue.html" class="text-white d-block mb-2">Dialogue Topics</a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 text-center text-lg-end">
+                    <h5 class="mb-3">From the Quran</h5>
+                    <p style="font-style: italic; opacity: 0.9;">
+                        "Invite to the way of your Lord with wisdom and beautiful preaching, and argue with them in a way that is best."<br>
+                        <span style="font-size: 0.9rem;">- Quran 16:125</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>&copy; 2024 Noor Deenil Islam. All rights reserved.</p>
+                <p class="small" style="opacity: 0.8;">A platform for respectful Islamic dialogue and Dawah</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Set active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                if(link.getAttribute('href') === './contact.html') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+            
+            // Form submission (demo only)
+            document.getElementById('contactForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Note: This is a demonstration form. For actual contact, please use the WhatsApp or Email options above. شكرًا - Thank you for your message!');
+                this.reset();
+            });
+        });
+    </script>
+</body>
 </html>
