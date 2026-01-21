@@ -32,60 +32,550 @@
             --dark-gray: #333333;
         }
         
-    </style> <!-- This is the closing style tag -->
         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-gray);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Arabic Font */
+        .arabic {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            direction: rtl;
+        }
+        
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            padding: 1.2rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--white) !important;
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--white) !important;
+            font-weight: 600;
+            margin: 0 10px;
+            padding: 10px 20px !important;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-size: 1.05rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Mobile Menu Button */
+        .navbar-toggler {
+            border: 2px solid rgba(255,255,255,0.4);
+            padding: 8px 12px;
+        }
+        
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 3px rgba(255,255,255,0.2);
+        }
+        
+        /* Mobile Menu Styles */
+        @media (max-width: 992px) {
+            .navbar-collapse {
+                background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+                padding: 25px;
+                border-radius: 15px;
+                margin-top: 15px;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            }
+            
+            .nav-link {
+                margin: 8px 0;
+                text-align: center;
+                padding: 15px !important;
+                background-color: rgba(255,255,255,0.1);
+            }
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--white);
+            text-align: center;
+            padding-top: 100px;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 10px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            animation: fadeInUp 1s ease 0.3s both;
+            font-weight: 300;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.8;
+            animation: fadeInUp 1s ease 0.6s both;
+            opacity: 0.9;
+        }
+        
+        /* ===== CTA BUTTONS ===== */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(44, 120, 108, 0.4);
+            margin: 15px;
+            animation: fadeInUp 1s ease 0.9s both;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(44, 120, 108, 0.5);
+            color: var(--white);
+        }
+        
+        .cta-button-outline {
+            background: transparent;
+            border: 3px solid var(--white);
+            color: var(--white);
+        }
+        
+        .cta-button-outline:hover {
+            background: var(--white);
+            color: var(--primary-green);
+            border-color: var(--white);
+        }
+        
+        /* ===== MISSION SECTION ===== */
+        .mission-section {
+            padding: 120px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .section-title {
+            text-align: center;
+            color: var(--primary-green);
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 3px;
+        }
+        
+        /* ===== CARDS ===== */
+        .feature-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 35px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            border-top: 6px solid var(--primary-green);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-20px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+        
+        .feature-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-green), var(--gold));
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--primary-green);
+            margin-bottom: 30px;
+            display: inline-block;
+            padding: 25px;
+            border-radius: 50%;
+            background: var(--light-green);
+        }
+        
+        .feature-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 20px;
+        }
+        
+        /* ===== QURAN VERSE ===== */
+        .quran-section {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .quran-section:before {
+            content: '﷽';
+            position: absolute;
+            font-family: 'Noto Sans Arabic';
+            font-size: 15rem;
+            opacity: 0.07;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .quran-arabic {
+            font-size: 3rem;
+            line-height: 2;
+            margin-bottom: 25px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quran-translation {
+            font-size: 1.5rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .quran-reference {
+            font-size: 1.1rem;
+            margin-top: 30px;
+            opacity: 0.8;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ===== FOUNDER SECTION ===== */
+        .founder-section {
+            padding: 120px 0;
+            background-color: var(--white);
+        }
+        
+        .founder-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 25px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border: 2px solid var(--light-green);
+        }
+        
+        .founder-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: white;
+            font-size: 5rem;
+            box-shadow: 0 15px 35px rgba(44, 120, 108, 0.3);
+            border: 8px solid white;
+        }
+        
+        .badge-credential {
+            display: inline-block;
+            background: var(--primary-green);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            margin: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* ===== DIALOGUE SECTION ===== */
+        .dialogue-section {
+            padding: 120px 0;
+            background-color: var(--light-gray);
+        }
+        
+        .dialogue-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-left: 6px solid var(--primary-green);
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        
+        .dialogue-card:hover {
+            transform: translateX(15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .dialogue-topic {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-green);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .dialogue-topic i {
+            margin-right: 15px;
+            color: var(--primary-green);
+            font-size: 1.8rem;
+        }
+        
+        /* ===== CONTACT CTA ===== */
+        .contact-cta {
+            background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                        url('https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 120px 0;
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+        
+        .contact-title {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            font-weight: 800;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 15px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+            padding-left: 10px;
+            transform: translateX(5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+        
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.4rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .quran-arabic {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                padding: 35px 25px;
+            }
+            
+            .cta-button {
+                padding: 15px 35px;
+                font-size: 1.1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-button {
+                display: block;
+                margin: 15px auto;
+                width: 90%;
+                max-width: 300px;
+            }
+        }
     </style>
 </head>
 <body>
-            <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: linear-gradient(135deg, #2c786c 0%, #245c53 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <!-- Brand/Logo -->
-            <a class="navbar-brand" href="index.html" style="font-weight: 700; font-size: 1.8rem;">
-                <i class="fas fa-mosque me-2"></i>Noor Deenil Islam
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-mosque"></i> Noor Deenil Islam
             </a>
             
-            <!-- Menu Button - VISIBLE ON MOBILE -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" 
-                    aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation"
-                    style="border: 1px solid rgba(255,255,255,0.3); padding: 6px 12px; border-radius: 5px;">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
-                <span style="margin-left: 8px; font-size: 0.9rem; color: white;">Menu</span>
             </button>
             
-            <!-- Navigation Links -->
-            <div class="collapse navbar-collapse" id="mainNavbar">
-                <ul class="navbar-nav ms-auto" style="gap: 10px;">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="index.html" style="color: white !important; padding: 10px 20px; border-radius: 5px;">
-                            <i class="fas fa-home me-2"></i>Home
+                        <a class="nav-link active" href="index.html">
+                            <i class="fas fa-home"></i> Home
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="dialogue.html" style="color: white !important; padding: 10px 20px; border-radius: 5px;">
-                            <i class="fas fa-comments me-2"></i>Dialogue & Debate
+                        <a class="nav-link" href="dialogue.html">
+                            <i class="fas fa-comments"></i> Dialogue & Debate
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html" style="color: white !important; padding: 10px 20px; border-radius: 5px;">
-                            <i class="fas fa-info-circle me-2"></i>About Islam
+                        <a class="nav-link" href="about.html">
+                            <i class="fas fa-info-circle"></i> About Islam
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="resources.html" style="color: white !important; padding: 10px 20px; border-radius: 5px;">
-                            <i class="fas fa-book me-2"></i>Resources
+                        <a class="nav-link" href="resources.html">
+                            <i class="fas fa-book"></i> Resources
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html" style="color: white !important; padding: 10px 20px; border-radius: 5px;">
-                            <i class="fas fa-envelope me-2"></i>Contact
+                        <a class="nav-link" href="contact.html">
+                            <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- Hero Section -->
+
+    <!-- ===== HERO SECTION ===== -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-content">
@@ -108,7 +598,7 @@
         </div>
     </section>
 
-    <!-- Mission Section -->
+    <!-- ===== MISSION SECTION ===== -->
     <section class="mission-section" id="mission">
         <div class="container">
             <h2 class="section-title">Our Mission & Approach</h2>
@@ -144,7 +634,7 @@
         </div>
     </section>
 
-    <!-- Quran Verse -->
+    <!-- ===== QURAN VERSE ===== -->
     <section class="quran-section">
         <div class="container">
             <div class="quran-arabic arabic">
@@ -156,75 +646,61 @@
             <div class="quran-reference">Quran 12:108</div>
         </div>
     </section>
-    <!-- About Founder -->
-    <section class="mission-section" style="background: white;">
+
+    <!-- ===== FOUNDER SECTION ===== -->
+    <section class="founder-section">
         <div class="container">
             <h2 class="section-title">About the Founder</h2>
-            <div class="row align-items-center">
-                <div class="col-md-4 text-center mb-4 mb-md-0">
-                    <div style="width: 200px; height: 200px; border-radius: 50%; 
-                              background: linear-gradient(135deg, #2c786c 0%, #245c53 100%); 
-                              display: flex; align-items: center; justify-content: center; 
-                              margin: 0 auto; color: white; font-size: 4rem; box-shadow: 0 10px 25px rgba(44, 120, 108, 0.3);">
-                        <i class="fas fa-user-graduate"></i>
+            <div class="founder-card">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <div class="founder-avatar">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="mt-4" style="color: var(--primary-green); font-weight: 800;">Abdul Rasheed Nkhoma</h3>
+                        <div class="mt-3">
+                            <span class="badge-credential">
+                                <i class="fas fa-book-quran me-1"></i>Hafiz al-Quran
+                            </span>
+                            <span class="badge-credential" style="background: var(--dark-green);">
+                                <i class="fas fa-graduation-cap me-1"></i>Science Student
+                            </span>
+                        </div>
                     </div>
-                    <h4 class="mt-3" style="color: #2c786c; font-weight: 700;">Abdul Rasheed Nkhoma</h4>
-                    <p style="color: #666; font-weight: 500;">
-                        <i class="fas fa-book-quran me-1"></i> Hafiz al-Quran
-                        <br>
-                        <i class="fas fa-graduation-cap me-1"></i> Science Education Student
-                    </p>
-                </div>
-                <div class="col-md-8">
-                    <div style="background: #f8f9fa; padding: 30px; border-radius: 15px; border-left: 5px solid #2c786c;">
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 20px;">
-                            <strong style="color: #2c786c;">Assalamu Alaikum wa Rahmatullahi wa Barakatuh,</strong>
-                        </p>
-                        
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
+                    
+                    <div class="col-md-8">
+                        <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 25px; color: #333;">
+                            <strong style="color: var(--primary-green); font-size: 1.3rem;">Assalamu Alaikum wa Rahmatullahi wa Barakatuh,</strong><br><br>
                             I am <strong>Abdul Rasheed Nkhoma</strong>, founder of Noor Deenil Islam. Born and raised in Chasefu, 
-                            I completed my Islamic education at Lundazi Islamic Institute from 2014 to 2023, where I was blessed 
-                            to memorize the entire Quran (Hifz) under the guidance of Maulana Zaheer.
+                            I completed my Islamic education at Lundazi Islamic Institute (2014-2023), memorizing the entire 
+                            Quran under Maulana Zaheer. Currently, I'm a 3rd-year Science Education student at Makeni College of Education.
                         </p>
                         
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-                            Currently, I am in my third year pursuing Science Education at Makeni College of Education. 
-                            This combination of traditional Islamic knowledge and modern scientific education gives me a 
-                            unique perspective in presenting Islam through both spiritual understanding and logical reasoning.
-                        </p>
-                        
-                        <p style="font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px;">
-                            This website represents my commitment to Dawah—inviting people to Islam with wisdom, beautiful preaching, 
-                            and evidence-based dialogue. As a Hafiz, I have a deep connection with the Quran, and as a science student, 
-                            I appreciate the importance of logic and evidence in discussions.
-                        </p>
-                        
-                        <div style="background: #e8f4f1; padding: 20px; border-radius: 10px; margin-top: 25px;">
-                            <p style="font-size: 1.1rem; line-height: 1.8; margin: 0; font-style: italic; color: #245c53;">
-                                <i class="fas fa-quote-left me-2"></i>
-                                "My mission is to present Islam as the complete way of life—perfectly compatible with reason, 
-                                science, and human nature. Through respectful dialogue with Christians and followers of other 
-                                faiths, I aim to clarify misconceptions and present the beautiful message of Tawheed."
-                                <i class="fas fa-quote-right ms-2"></i>
+                        <div style="background: var(--light-green); padding: 25px; border-radius: 15px; margin-bottom: 25px; border-left: 5px solid var(--gold);">
+                            <h5 style="color: var(--dark-green); margin-bottom: 15px; display: flex; align-items: center;">
+                                <i class="fas fa-comments me-2" style="color: var(--gold); font-size: 1.3rem;"></i>
+                                <span>6+ Years of Dialogue Experience</span>
+                            </h5>
+                            <p style="font-size: 1.1rem; line-height: 1.7; margin: 0; color: #333;">
+                                My journey in Christian-Muslim dialogue began in <strong>2018</strong> when I was in Grade 9. 
+                                For <strong>6 years</strong>, I have actively engaged in discussions, debates, and comparative 
+                                religion studies. This extensive experience gives me deep insight into common questions, 
+                                biblical arguments, and effective approaches for presenting Islam with wisdom and evidence.
                             </p>
                         </div>
                         
-                        <div class="mt-4">
-                            <p style="font-size: 1rem; color: #666;">
-                                <i class="fas fa-certificate me-2" style="color: #2c786c;"></i>
-                                <strong>Credentials:</strong> Hafiz al-Quran | Islamic Studies Graduate | Science Education Student
-                            </p>
-                            <p style="font-size: 1rem; color: #666;">
-                                <i class="fas fa-map-marker-alt me-2" style="color: #2c786c;"></i>
-                                <strong>Background:</strong> Chasefu, Lundazi | Makeni College of Education
-                            </p>
-                        </div>
+                        <p style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 20px; color: #333;">
+                            This unique combination of <strong>Quranic memorization</strong>, <strong>scientific education</strong>, 
+                            and <strong>practical dialogue experience</strong> enables me to present Islam through multiple 
+                            lenses: spiritual, logical, and evidence-based.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Dialogue Topics -->
+
+    <!-- ===== DIALOGUE TOPICS ===== -->
     <section class="dialogue-section">
         <div class="container">
             <h2 class="section-title">Key Dialogue Topics</h2>
@@ -270,11 +746,11 @@
         </div>
     </section>
 
-    <!-- Contact CTA -->
+    <!-- ===== CONTACT CTA ===== -->
     <section class="contact-cta">
         <div class="container">
             <h2 class="contact-title">Ready for Respectful Dialogue?</h2>
-            <p class="hero-description mb-5">
+            <p class="hero-description mb-5" style="max-width: 800px; margin: 0 auto 40px;">
                 Have questions about Islam? Want to discuss theological points? 
                 We welcome sincere inquiries from Christians and followers of all faiths.
             </p>
@@ -284,7 +760,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ===== FOOTER ===== -->
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -292,34 +768,42 @@
                     <div class="footer-logo">
                         <i class="fas fa-mosque me-2"></i> Noor Deenil Islam
                     </div>
+                    <p>Faith, Reason & Dialogue</p>
                     <p>Spreading the light of Tawheed through wisdom and respectful engagement.</p>
                 </div>
                 
                 <div class="col-lg-4 text-center mb-4 mb-lg-0">
-                    <h5 class="mb-3">Quick Links</h5>
+                    <h5 class="mb-3" style="font-weight: 700;">Quick Links</h5>
                     <div class="footer-links">
                         <a href="index.html">Home</a>
                         <a href="dialogue.html">Dialogue & Debate</a>
                         <a href="about.html">About Islam</a>
+                        <a href="resources.html">Resources</a>
                         <a href="contact.html">Contact Us</a>
                     </div>
                 </div>
                 
                 <div class="col-lg-4 text-center text-lg-end">
-                    <h5 class="mb-3">Connect With Us</h5>
+                    <h5 class="mb-3" style="font-weight: 700;">Connect With Us</h5>
                     <div class="social-icons mb-3">
-                        <a href="#" class="text-white me-3" style="font-size: 1.5rem;">
+                        <a href="#" class="text-white me-3" style="font-size: 1.8rem;">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="#" class="text-white me-3" style="font-size: 1.5rem;">
+                        <a href="#" class="text-white me-3" style="font-size: 1.8rem;">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#" class="text-white" style="font-size: 1.5rem;">
+                        <a href="#" class="text-white" style="font-size: 1.8rem;">
                             <i class="fab fa-youtube"></i>
                         </a>
                     </div>
+                    <p style="margin-bottom: 5px;">
+                        <i class="fas fa-user-graduate me-2"></i> Abdul Rasheed Nkhoma
+                    </p>
+                    <p style="margin-bottom: 5px;">
+                        <i class="fas fa-book-quran me-2"></i> Hafiz al-Quran
+                    </p>
                     <p>
-                        <i class="fas fa-envelope me-2"></i> contact@noordeenilislam.com
+                        <i class="fas fa-comments me-2"></i> 6+ Years Dialogue Experience
                     </p>
                 </div>
             </div>
@@ -339,11 +823,11 @@
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.padding = '0.5rem 0';
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            if (window.scrollY > 100) {
+                navbar.style.padding = '0.8rem 0';
+                navbar.style.boxShadow = '0 6px 25px rgba(0,0,0,0.15)';
             } else {
-                navbar.style.padding = '1rem 0';
+                navbar.style.padding = '1.2rem 0';
                 navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
             }
         });
@@ -358,12 +842,9 @@
                 const targetElement = document.querySelector(targetId);
                 if(targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 100,
                         behavior: 'smooth'
                     });
-                    
-                    // Update URL without page jump
-                    history.pushState(null, null, targetId);
                 }
             });
         });
@@ -395,15 +876,23 @@
                 
                 if(elementPosition < screenPosition) {
                     element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
+                    element.style.transform = element.classList.contains('feature-card') 
+                        ? 'translateY(0) scale(1)' 
+                        : 'translateX(0)';
                 }
             });
         }
         
         // Initialize animations
-        document.querySelectorAll('.feature-card, .dialogue-card').forEach(element => {
+        document.querySelectorAll('.feature-card').forEach(element => {
             element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
+            element.style.transform = 'translateY(30px) scale(0.95)';
+            element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+        
+        document.querySelectorAll('.dialogue-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateX(-30px)';
             element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         });
         
