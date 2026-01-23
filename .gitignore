@@ -1,2 +1,23 @@
-node_modules
+# .gitignore
+# Do NOT commit these to GitHub
+
+# Firebase config with real API keys
+firebase-config.js
+config.js
+secrets/
+.env
+.env.local
+
+# Node modules
+node_modules/
+
+# System files
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Editor files
+.vscode/
+.idea/
