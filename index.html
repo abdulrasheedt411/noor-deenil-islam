@@ -1,569 +1,287 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Noor Deenil Islam - Faith, Reason & Dialogue</title>
-    
-    <meta name="description" content="Noor Deenil Islam: Spreading the light of Tawheed through faith, reason, and respectful dialogue">
-    <meta name="keywords" content="Islam, Dawah, Tawheed, Christianity, Muslim-Christian dialogue">
-    <meta name="author" content="Abdul Rasheed Nkhoma - Hafiz al-Quran & Science Student">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>نور دين الإسلام | Noor Deenil Islam</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="https://img.icons8.com/color/96/mosque.png">
     
-    <style>
-        :root {
-            --islamic-green: #2c786c;
-            --dark-green: #245c53;
-            --light-green: #e8f4f1;
-            --gold: #d4af37;
-            --white: #ffffff;
-            --light-bg: #f8f9fa;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            color: #333;
-            background-color: var(--white);
-            line-height: 1.6;
-        }
-        
-        .arabic {
-            font-family: 'Amiri', serif;
-            direction: rtl;
-        }
-        
-        /* Navigation */
-        .navbar {
-            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
-            padding: 1rem 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-        }
-        
-        .navbar-brand {
-            font-weight: 700;
-            font-size: 1.8rem;
-            color: var(--white) !important;
-        }
-        
-        .nav-link {
-            color: var(--white) !important;
-            font-weight: 500;
-            padding: 8px 20px !important;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-        
-        .nav-link:hover, .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-        
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://images.unsplash.com/photo-1518621736915-f3b1c41bfd00?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            color: var(--white);
-            padding-top: 80px;
-        }
-        
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-        
-        .hero-description {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            line-height: 1.8;
-        }
-        
-        /* Buttons */
-        .btn-custom {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
-            color: var(--white);
-            padding: 15px 40px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(44, 120, 108, 0.3);
-            margin: 10px;
-        }
-        
-        .btn-custom:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(44, 120, 108, 0.4);
-            color: var(--white);
-        }
-        
-        .btn-outline-custom {
-            background: transparent;
-            border: 2px solid var(--white);
-            color: var(--white);
-        }
-        
-        .btn-outline-custom:hover {
-            background: var(--white);
-            color: var(--islamic-green);
-        }
-        
-        /* Sections */
-        .section-padding {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            text-align: center;
-            color: var(--islamic-green);
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-        }
-        
-        /* Feature Cards */
-        .feature-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            height: 100%;
-            border-top: 5px solid var(--islamic-green);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--islamic-green);
-            margin-bottom: 20px;
-        }
-        
-        /* Founder Section */
-        .founder-section {
-            background: var(--light-bg);
-        }
-        
-        .founder-card {
-            background: var(--white);
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-        
-        .founder-header {
-            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
-            color: var(--white);
-            padding: 40px;
-            text-align: center;
-        }
-        
-        .founder-avatar {
-            width: 150px;
-            height: 150px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            border: 5px solid rgba(255,255,255,0.2);
-            font-size: 3.5rem;
-        }
-        
-        .founder-name {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        
-        .badge {
-            background: rgba(255,255,255,0.2);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            margin: 0 5px;
-        }
-        
-        /* Quran Section */
-        .quran-section {
-            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-        }
-        
-        .quran-arabic {
-            font-size: 2.2rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
-        
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--islamic-green) 0%, var(--dark-green) 100%);
-            color: var(--white);
-            padding: 50px 0 20px;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-        }
-    </style>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="fas fa-mosque"></i> Noor Deenil Islam
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">
-                            <i class="fas fa-home"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dialogue.html">
-                            <i class="fas fa-comments"></i> Dialogue
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="resources.html">
-                            <i class="fas fa-book"></i> Resources
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">
-                            <i class="fas fa-info-circle"></i> About Islam
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">
-                            <i class="fas fa-envelope"></i> Contact
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Animated Background -->
+    <div class="bg-pattern"></div>
+    <div class="floating-icons">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-mosque"></i>
+        <i class="fas fa-book-quran"></i>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Noor Deenil Islam</h1>
-                <p class="hero-subtitle">Faith, Reason & Dialogue</p>
-                <p class="hero-description">
-                    Spreading the light of Tawheed through wisdom, evidence, and respectful dialogue. 
-                    Engaging Christianity and other belief systems with clarity, logic, and sincerity.
-                </p>
-                <div>
-                    <a href="dialogue.html" class="btn-custom">
-                        <i class="fas fa-comments me-2"></i> Start Dialogue
-                    </a>
-                    <a href="#founder" class="btn-custom btn-outline-custom">
-                        <i class="fas fa-user me-2"></i> Meet the Founder
-                    </a>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header with Islamic Art -->
+        <header class="header">
+            <div class="header-decoration">
+                <div class="islamic-pattern"></div>
+                <div class="header-content">
+                    <div class="logo-container">
+                        <div class="logo">
+                            <i class="fas fa-mosque"></i>
+                            <span class="logo-text">نور</span>
+                        </div>
+                        <h1 class="title-arabic">نور دين الإسلام</h1>
+                        <h2 class="title-english">Noor Deenil Islam</h2>
+                        <p class="tagline">
+                            <i class="fas fa-quote-left"></i>
+                            Faith, Reason & Dialogue — Illuminating Islam with Wisdom and Evidence
+                            <i class="fas fa-quote-right"></i>
+                        </p>
+                    </div>
                 </div>
+                <div class="islamic-border"></div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <!-- Mission Section -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Our Mission & Approach</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h3>Clarity of Tawheed</h3>
-                        <p>Presenting the pure Islamic concept of Allah's Oneness with logical arguments and scriptural evidence.</p>
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-card animate-fade-in">
+                    <div class="welcome-icon">
+                        <i class="fas fa-door-open"></i>
                     </div>
+                    <h3>Welcome to Our Community of Knowledge</h3>
+                    <p class="welcome-text">
+                        Join thousands of seekers in exploring the beauty of Islam through evidence-based discussions, 
+                        scholarly resources, and meaningful dialogue.
+                    </p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <h3>Respectful Dialogue</h3>
-                        <p>Engaging Christians with wisdom, beautiful preaching, and the highest standards of character.</p>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <h3>Evidence-Based</h3>
-                        <p>Using Quranic verses, Biblical references, and logical reasoning to present Islam.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Founder Section -->
-    <section id="founder" class="section-padding founder-section">
-        <div class="container">
-            <h2 class="section-title">About the Founder</h2>
-            
-            <div class="founder-card">
-                <div class="founder-header">
-                    <div class="founder-avatar">
-                        <i class="fas fa-user-graduate"></i>
+            <!-- Authentication Section -->
+            <section class="auth-section">
+                <div class="auth-container">
+                    <!-- Login Card -->
+                    <div class="auth-card login-card" id="login-container">
+                        <div class="card-header">
+                            <h3><i class="fas fa-sign-in-alt"></i> Join the Journey</h3>
+                            <p>Sign in to access exclusive content</p>
+                        </div>
+                        
+                        <div class="social-logins">
+                            <button id="google-login" class="social-btn google-btn animate-bounce">
+                                <span class="btn-icon">
+                                    <i class="fab fa-google"></i>
+                                </span>
+                                <span class="btn-text">Continue with Google</span>
+                                <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                            
+                            <button id="github-login" class="social-btn github-btn animate-bounce">
+                                <span class="btn-icon">
+                                    <i class="fab fa-github"></i>
+                                </span>
+                                <span class="btn-text">Continue with GitHub</span>
+                                <span class="btn-arrow"><i class="fas fa-arrow-right"></i></span>
+                            </button>
+                            
+                            <div class="divider">
+                                <span>or</span>
+                            </div>
+                            
+                            <button id="email-login" class="social-btn email-btn">
+                                <span class="btn-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <span class="btn-text">Continue with Email</span>
+                            </button>
+                        </div>
+                        
+                        <div class="terms">
+                            <p>By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a></p>
+                        </div>
                     </div>
-                    <h2 class="founder-name">Abdul Rasheed Nkhoma</h2>
-                    <p>Hafiz al-Quran | Science Education Student | Dawah Worker</p>
-                    
-                    <div class="mt-3">
-                        <span class="badge"><i class="fas fa-book-quran me-1"></i> Hafiz al-Quran</span>
-                        <span class="badge"><i class="fas fa-flask me-1"></i> Science Student</span>
-                        <span class="badge"><i class="fas fa-comments me-1"></i> 6+ Years Dialogue</span>
-                    </div>
-                </div>
-                
-                <div class="p-4">
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <h4 class="mb-3 text-green">
-                                <i class="fas fa-graduation-cap me-2"></i>My Journey in Dawah
-                            </h4>
-                            
-                            <p class="mb-3">
-                                <strong>Assalamu Alaikum wa Rahmatullahi wa Barakatuh,</strong><br><br>
-                                I am <strong>Abdul Rasheed Nkhoma</strong>, founder of Noor Deenil Islam. Born and raised in Chasefu, 
-                                I completed my Islamic education at Lundazi Islamic Institute from 2014 to 2023.
-                            </p>
-                            
-                            <p class="mb-3">
-                                Currently, I am in my third year pursuing Science Education at Makeni College of Education. 
-                                This combination gives me a unique perspective in presenting Islam.
-                            </p>
-                            
-                            <div class="alert alert-warning">
-                                <h5><i class="fas fa-comments me-2"></i>Dialogue Experience Since 2018</h5>
-                                <p class="mb-0">
-                                    My journey in Christian-Muslim dialogue began in <strong>2018</strong> when I was in Grade 9. 
-                                    For <strong>6 years</strong>, I have actively engaged in discussions and debates.
-                                </p>
+
+                    <!-- User Profile Card -->
+                    <div class="auth-card profile-card" id="user-container" style="display: none;">
+                        <div class="profile-header">
+                            <div class="profile-avatar">
+                                <img id="user-photo" src="" alt="Profile">
+                                <div class="online-status"></div>
+                            </div>
+                            <div class="profile-info">
+                                <h3>Welcome Back, <span id="user-name" class="user-name"></span>! <i class="fas fa-hands-praying"></i></h3>
+                                <p class="user-email"><i class="fas fa-envelope"></i> <span id="user-email"></span></p>
+                                <p class="member-since"><i class="fas fa-calendar-star"></i> Member since <span id="join-date"></span></p>
                             </div>
                         </div>
                         
-                        <div class="col-lg-4">
-                            <h5 class="mb-3 text-green">
-                                <i class="fas fa-history me-2"></i>My Journey Timeline
-                            </h5>
-                            
-                            <div class="timeline ps-3">
-                                <div class="mb-3">
-                                    <strong>2014-2023</strong>
-                                    <p class="mb-1">Islamic Education at Lundazi Islamic Institute</p>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <strong>2018</strong>
-                                    <p class="mb-1">Began Christian-Muslim dialogue (Grade 9)</p>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <strong>2023</strong>
-                                    <p class="mb-1">Completed Hifz al-Quran under Maulana Zaheer</p>
-                                </div>
-                                
-                                <div class="mb-3">
-                                    <strong>Present</strong>
-                                    <p class="mb-1">3rd Year Science Education, Makeni College</p>
-                                </div>
+                        <div class="profile-stats">
+                            <div class="stat">
+                                <i class="fas fa-book-open"></i>
+                                <span class="stat-number">24</span>
+                                <span class="stat-label">Resources Read</span>
                             </div>
+                            <div class="stat">
+                                <i class="fas fa-comments"></i>
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Discussions</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-award"></i>
+                                <span class="stat-number">3</span>
+                                <span class="stat-label">Badges</span>
+                            </div>
+                        </div>
+                        
+                        <div class="profile-actions">
+                            <button id="dashboard-btn" class="action-btn primary-btn">
+                                <i class="fas fa-tachometer-alt"></i> Go to Dashboard
+                            </button>
+                            <button id="logout-btn" class="action-btn logout-btn">
+                                <i class="fas fa-sign-out-alt"></i> Logout
+                            </button>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Quran Section -->
-    <section class="quran-section">
-        <div class="container">
-            <div class="quran-arabic arabic">
-                قُلْ هَـٰذِهِۦ سَبِيلِىٓ أَدْعُوٓا۟ إِلَى ٱللَّهِ ۚ عَلَىٰ بَصِيرَةٍ أَنَا۠ وَمَنِ ٱتَّبَعَنِى
-            </div>
-            <div class="quran-translation">
-                "Say: This is my way; I invite to Allah with insight, I and those who follow me."
-            </div>
-            <div class="quran-reference">Quran 12:108</div>
-        </div>
-    </section>
-
-    <!-- Dialogue Topics -->
-    <section class="section-padding">
-        <div class="container">
-            <h2 class="section-title">Key Dialogue Topics</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
+            <!-- Features Grid -->
+            <section class="features-section">
+                <div class="section-title">
+                    <h2><i class="fas fa-gem"></i> What Awaits You</h2>
+                    <p>Discover the comprehensive resources of our community</p>
+                </div>
+                
+                <div class="features-grid">
                     <div class="feature-card">
-                        <h4><i class="fas fa-star-of-david me-2"></i>The Concept of God</h4>
-                        <p>Islamic Tawheed vs Christian Trinity. Understanding Allah's Oneness.</p>
+                        <div classfeature-icon quran-icon">
+                            <i class="fas fa-book-quran"></i>
+                        </div>
+                        <h4>Quranic Studies</h4>
+                        <p>In-depth tafsir, translations, and linguistic analysis of the Holy Quran</p>
+                        <div class="feature-badge">New</div>
                     </div>
-                </div>
-                
-                <div class="col-md-6 mb-4">
+                    
                     <div class="feature-card">
-                        <h4><i class="fas fa-cross me-2"></i>Jesus in Islam</h4>
-                        <p>Prophet Isa (Jesus) - his miraculous birth and true status in Islam.</p>
+                        <div class="feature-icon hadith-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <h4>Hadith Library</h4>
+                        <p>Authentic collections with scholarly commentary and verification</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon scholar-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h4>Scholar Sessions</h4>
+                        <p>Live Q&A and recorded lectures from renowned Islamic scholars</p>
+                        <div class="feature-badge">Live</div>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon dialogue-icon">
+                            <i class="fas fa-hands"></i>
+                        </div>
+                        <h4>Interfaith Dialogue</h4>
+                        <p>Respectful discussions with experts from various faith traditions</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon course-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Structured Courses</h4>
+                        <p>Step-by-step learning paths with certificates of completion</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon community-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4>Global Community</h4>
+                        <p>Connect with believers from around the world in private forums</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-3">
-                <a href="dialogue.html" class="btn-custom">
-                    <i class="fas fa-arrow-right me-2"></i> Explore All Topics
-                </a>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- CTA Section -->
-    <section class="section-padding cta-section">
-        <div class="container">
-            <h2 class="section-title text-white">Ready for Respectful Dialogue?</h2>
-            <p class="hero-description text-white mb-5">
-                Have questions about Islam? Want to discuss theological points? 
-                We welcome sincere inquiries from all faiths.
-            </p>
-            <a href="contact.html" class="btn-custom">
-                <i class="fas fa-envelope me-2"></i> Contact Us
-            </a>
-        </div>
-    </section>
+            <!-- Quote Section -->
+            <section class="quote-section">
+                <div class="quote-card">
+                    <i class="fas fa-quote-right quote-icon"></i>
+                    <p class="quote-text">
+                        "Seek knowledge from the cradle to the grave. The ink of the scholar is holier than the blood of the martyr."
+                    </p>
+                    <p class="quote-author">— Prophet Muhammad (Peace Be Upon Him)</p>
+                </div>
+            </section>
+        </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4 text-center">
-                    <h4 class="mb-3">
-                        <i class="fas fa-mosque me-2"></i> Noor Deenil Islam
-                    </h4>
-                    <p>Spreading the light of Tawheed through wisdom and respectful engagement.</p>
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-mosque"></i>
+                    <span>Noor Deenil Islam</span>
                 </div>
                 
-                <div class="col-lg-4 mb-4 text-center">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <div>
-                        <a href="index.html" class="text-white d-block mb-2">Home</a>
-                        <a href="dialogue.html" class="text-white d-block mb-2">Dialogue & Debate</a>
-                        <a href="resources.html" class="text-white d-block mb-2">Resources</a>
-                        <a href="contact.html" class="text-white d-block mb-2">Contact</a>
-                    </div>
+                <div class="footer-links">
+                    <a href="#"><i class="fas fa-book"></i> Resources</a>
+                    <a href="#"><i class="fas fa-video"></i> Lectures</a>
+                    <a href="#"><i class="fas fa-question-circle"></i> FAQ</a>
+                    <a href="#"><i class="fas fa-envelope"></i> Contact</a>
                 </div>
                 
-                <div class="col-lg-4 mb-4 text-center">
-                    <h5 class="mb-3">Connect</h5>
-                    <div class="social-icons mb-3">
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
-                    </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-telegram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
+                
+                <p class="copyright">
+                    © 2024 Noor Deenil Islam. All rights reserved.<br>
+                    <span class="disclaimer">
+                        <i class="fas fa-shield-alt"></i> Secure authentication powered by Firebase
+                    </span>
+                </p>
             </div>
-            
-            <div class="text-center pt-4 border-top border-white-50">
-                <p>&copy; 2024 Noor Deenil Islam. All rights reserved.</p>
-                <p class="small">Founded by Abdul Rasheed Nkhoma - Hafiz al-Quran & Science Student</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if(targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if(targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-        
-        // Set active nav link
-        document.addEventListener('DOMContentLoaded', function() {
-            const currentPage = window.location.pathname.split('/').pop();
-            const navLinks = document.querySelectorAll('.nav-link');
-            
-            navLinks.forEach(link => {
-                if(link.getAttribute('href') === 'index.html' && (currentPage === '' || currentPage === 'index.html')) {
-                    link.classList.add('active');
-                } else if(link.getAttribute('href') === currentPage) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-content">
+            <p id="toast-message"></p>
+        </div>
+        <button class="toast-close"><i class="fas fa-times"></i></button>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="loading-spinner">
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+                <div class="spinner"></div>
+            </div>
+            <p>Connecting to the Divine Network...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="firebase.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
